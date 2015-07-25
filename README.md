@@ -39,7 +39,7 @@ File Setup:
 
 This script requires:
 
-1. A tab-delimited file in this format:
+**A tab-delimited file in this format:**
 
 	HVM2044_NODE_117_length_65041_cov_22.578804	CFT073_hly	99.00	7410	73	1	23077	30485	7410	1	0.0	13272  
 	HVM2289_NODE_30_length_65039_cov_19.561985	CFT073_hly	99.00	7410	73	1	34629	42037	1	7410	0.0	13272
@@ -47,10 +47,10 @@ This script requires:
 	HVM52_NODE_75_length_129723_cov_13.136999	CFT073_hly	99.00	7410	73	1	112332	119740	7410	1	0.0	13272
 
 The first column will become the sequence header.
-The second column name + ".fasta" will be the genome file used to parse the sequence from (which should be located in the "genome_files" directory - see below)
+The second column name + ".fasta" will be the genome file used to parse the sequence from (which should be located in the "genome_files" directory - see below).
 The 9th and 10th column should have the sequence coordinates - if the coordinates are for the reverse strand, the sequence will automatically be reverse complemented. 
 
-2. A directory called "genome_files" containing all the fasta files from which the sequences will be parsed.
+**A directory called "genome_files" containing all the fasta files from which the sequences will be parsed.**
 
 Script Usage:
 -------------
