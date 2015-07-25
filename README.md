@@ -28,3 +28,35 @@ Then, using a simple loop, type:
 As the gene names are different, nothing in the results folder should be overwritten. 
 
 
+
+Parsing sequences from fasta files using coordinates
+=====================================================
+
+This script is designed to extract sequences from fasta files using coordinates given in a tab delimited file. 
+
+File Setup:
+------------
+
+This script requires:
+
+1. A tab-delimited file in this format:
+
+	HVM2044_NODE_117_length_65041_cov_22.578804	CFT073_hly	99.00	7410	73	1	23077	30485	7410	1	0.0	13272  
+	HVM2289_NODE_30_length_65039_cov_19.561985	CFT073_hly	99.00	7410	73	1	34629	42037	1	7410	0.0	13272
+	HVM277_NODE_67_length_183966_cov_14.313231	CFT073_hly	99.01	7410	72	1	166552	173960	7410	1	0.0	13278
+	HVM52_NODE_75_length_129723_cov_13.136999	CFT073_hly	99.00	7410	73	1	112332	119740	7410	1	0.0	13272
+
+The first column will become the sequence header.
+The second column name + ".fasta" will be the genome file used to parse the sequence from (which should be located in the "genome_files" directory - see below)
+The 9th and 10th column should have the sequence coordinates - if the coordinates are for the reverse strand, the sequence will automatically be reverse complemented. 
+
+2. A directory called "genome_files" containing all the fasta files from which the sequences will be parsed.
+
+Script Usage:
+-------------
+
+The script should be executed above the "genome_files" directory:
+
+	$ python parse_seq.py <tab-delimited-file-with-coordinates>
+
+The output of the script will be a multi-fasta file called "outfile.fa".
