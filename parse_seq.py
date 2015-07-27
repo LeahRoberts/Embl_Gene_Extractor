@@ -27,8 +27,8 @@ genome_path = os.path.abspath("genome_files/")
 with open(in_file) as f:
     content = f.readlines()
     for line in content:
-        header = ">" + line.split("\t")[0]
         source = os.path.join(genome_path, line.split("\t")[1] + ".fasta")
+        header = ">" + line.split("\t")[0] + "_" + source.split(".")[0]
         seq_start = int(line.split("\t")[8]) - 1
         seq_end = int(line.split("\t")[9]) + 1
         if seq_start > seq_end:
